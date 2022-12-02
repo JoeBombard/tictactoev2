@@ -18,8 +18,7 @@ public class Play extends AppCompatActivity {
         btn11.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //EditText editText = (EditText)findViewById(R.id.button11);
-                //editText.setText("Username");
+                btn11.setText("X");
             }
         }));
     }
