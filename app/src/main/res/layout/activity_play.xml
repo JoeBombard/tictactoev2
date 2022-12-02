@@ -10,7 +10,7 @@
     tools:context=".Play">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/PlayerTurn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#03A9F4"
