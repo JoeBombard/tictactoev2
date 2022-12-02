@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#03A9F4"
+    android:backgroundTint="#03A9F4"
     android:orientation="vertical"
     tools:context=".Play">
 
@@ -11,18 +13,22 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#03A9F4"
         android:text="Player x's truns"
+        android:textColor="#673AB7"
         android:textSize="34sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="454dp"
+        android:backgroundTint="#03A9F4"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="450dp"
             android:layout_weight="20"
+            android:backgroundTint="#03A9F4"
             android:orientation="vertical">
 
             <Button
@@ -60,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="450dp"
             android:layout_weight="20"
+            android:backgroundTint="#03A9F4"
             android:orientation="vertical">
 
             <Button
@@ -97,6 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="450dp"
             android:layout_weight="20"
+            android:background="#03A9F4"
             android:orientation="vertical">
 
             <Button
@@ -129,12 +137,15 @@
         android:id="@+id/GameComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Game Comment" />
+        android:text="Game Comment"
+        android:textColor="#673AB7" />
 
     <Button
         android:id="@+id/continueplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#673AB7"
+        android:backgroundTint="#673AB7"
         android:enabled="false"
         android:text="Continue" />
 </LinearLayout>
