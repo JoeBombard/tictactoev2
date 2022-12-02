@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#03E2FF"
+    android:backgroundTint="#00E2FF"
     android:orientation="vertical"
     tools:context=".Settings">
 
@@ -11,7 +13,9 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
         android:text="Change respective names"
+        android:textColor="#673AB7"
         android:textSize="34sp" />
 
     <LinearLayout
@@ -23,7 +27,9 @@
             android:id="@+id/textView4"
             android:layout_width="104dp"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
             android:text="Player 1 :"
+            android:textColor="#673AB7"
             android:textSize="24sp" />
 
         <EditText
@@ -46,7 +52,9 @@
             android:id="@+id/textView3"
             android:layout_width="104dp"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
             android:text="Player 2 :"
+            android:textColor="#673AB7"
             android:textSize="24sp" />
 
         <EditText
@@ -64,18 +72,24 @@
         android:id="@+id/switch2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose which player starts" />
+        android:fontFamily="monospace"
+        android:text="Choose which player starts"
+        android:textColor="#673AB7" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Player 1 starts" />
+        android:fontFamily="monospace"
+        android:text="Player 1 starts"
+        android:textColor="#673AB7" />
 
     <Button
         android:id="@+id/ButComfirmName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#673AB7"
+        android:fontFamily="monospace"
         android:text="confirm" />
 
 </LinearLayout>
