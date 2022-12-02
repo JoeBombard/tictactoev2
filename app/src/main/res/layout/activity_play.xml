@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00B0FF"
-    android:backgroundTint="#00B0FF"
+    android:backgroundTint="#00F7FF"
     android:orientation="vertical"
     tools:context=".Play">
 
@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="454dp"
-        android:backgroundTint="#03A9F4"
+        android:backgroundTint="#01E1FD"
         android:orientation="horizontal">
 
         <LinearLayout
