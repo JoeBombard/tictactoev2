@@ -41,8 +41,6 @@ public class Play extends AppCompatActivity {
         continuer.setEnabled(false);
         continuer.setVisibility(View.GONE);
 
-
-
         btn.add(findViewById(R.id.button11));
         btn.add(findViewById(R.id.button12));
         btn.add(findViewById(R.id.button13));
@@ -63,9 +61,6 @@ public class Play extends AppCompatActivity {
                 }
             }));
         }
-
-
-
     }
     public void ClickBtn(Button btn){
         if (CanPlay) {
@@ -103,16 +98,3 @@ public class Play extends AppCompatActivity {
         Names[1]=temp;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
