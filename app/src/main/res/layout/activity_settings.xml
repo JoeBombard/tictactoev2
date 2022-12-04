@@ -41,7 +41,8 @@
             android:fontFamily="monospace"
             android:inputType="textPersonName"
             android:text="Name"
-            android:textColor="#673AB7" />
+            android:textColor="#673AB7"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 
@@ -67,6 +68,7 @@
             android:ems="10"
             android:fontFamily="monospace"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:text="Name"
             android:textColor="#673AB7" />
 
@@ -77,6 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
+        android:minHeight="48dp"
         android:text="Choose which player starts"
         android:textColor="#673AB7" />
 
