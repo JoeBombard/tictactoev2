@@ -29,14 +29,14 @@ public class Play extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        if (LautreJoueurCommence) CangerLordeDesJoueur(); //
+        if (LautreJoueurCommence) CangerLordeDesJoueur();
 
         comment = (TextView) findViewById(R.id.GameComment);
         turn = (TextView) findViewById(R.id.PlayerTurn);
 
         int temps = 0;
         if (QuiJou == -1) temps = 1;
-        turn.setText("It's " + Names[temps] + "'s turn to play (or " + symbole[temps] + ")");// corrent grammar=================================
+        turn.setText("It's " + Names[temps] + "'s turn to play (or " + symbole[temps] + ")");
         continuer = findViewById(R.id.continueplay);
         continuer.setEnabled(false);
         continuer.setVisibility(View.GONE);
@@ -80,7 +80,7 @@ public class Play extends AppCompatActivity {
                     QuiJou *= -1;
                     if (QuiJou == -1) temp = 1;
                     else temp = 0;
-                    turn.setText("Its " + Names[temp] + "'s turns to play (or " + symbole[temp] + ")");// corrent grammar=================================
+                    turn.setText("It's " + Names[temp] + "'s turn to play (or " + symbole[temp] + ")");
                 }
             } else comment.setText("This square is already taken");
         }
