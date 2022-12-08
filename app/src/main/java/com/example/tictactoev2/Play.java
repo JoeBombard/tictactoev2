@@ -82,7 +82,7 @@ public class Play extends AppCompatActivity {
                     else temp = 0;
                     turn.setText("It's " + Names[temp] + "'s turn to play (or " + symbole[temp] + ")");
                 }
-            } else comment.setText("This square is already taken");
+            } else comment.setText("This square is already taken.");
         }
     }
     public boolean CheckWin(){

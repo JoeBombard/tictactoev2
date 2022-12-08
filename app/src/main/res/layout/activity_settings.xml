@@ -33,7 +33,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/player1Name"
             android:layout_width="53dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,7 +61,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/player2Name"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
