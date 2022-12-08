@@ -36,7 +36,7 @@ public class Play extends AppCompatActivity {
 
         int temps = 0;
         if (QuiJou == -1) temps = 1;
-        turn.setText("Its " + Names[temps] + "'s turns to play (or " + symbole[temps] + ")");// corrent grammar=================================
+        turn.setText("It's " + Names[temps] + "'s turn to play (or " + symbole[temps] + ")");// corrent grammar=================================
         continuer = findViewById(R.id.continueplay);
         continuer.setEnabled(false);
         continuer.setVisibility(View.GONE);
