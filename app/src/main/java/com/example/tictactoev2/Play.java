@@ -16,7 +16,7 @@ import java.util.jar.Attributes;
 
 public class Play extends AppCompatActivity {
     int QuiJou = 1, WaitToCheckWin = 0; // qui joue = 1 ou -1 // garder qui joue a 1
-    String[] Names = new String[] {"Player 1", "Player 2"};// changer leur nom et changer l'orde dependament de qui commence (j'ai fait une fonction)
+    String[] Names = new String[] {"Player 1", "Player 2"};// changer leurs noms et changer l'ordre dependament de qui commence (j'ai fait une fonction)
     String[] symbole = new String[] {"X", "O"}; // ne pas les changer de place
     boolean CanPlay = true, LautreJoueurCommence; //  LautreJoueurCommence est true si la switch sans settings est activer (je c pas commen sa changer encore.
     TextView comment, turn;
