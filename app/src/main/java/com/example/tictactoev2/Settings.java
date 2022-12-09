@@ -25,7 +25,7 @@ public class Settings extends AppCompatActivity {
     public void ClickConfirm() {
         EditText player10 = findViewById(R.id.player1Name);
         EditText player20 = findViewById(R.id.player2Name);
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this); // 1
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this); // copie cette ligne là et ensuite met l'autre ligne en commentaire pour aller retrouver "player1name".
         // sharedPref.getString("player1name", "");
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("player1name", player10.getText().toString());
