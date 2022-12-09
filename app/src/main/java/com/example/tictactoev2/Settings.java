@@ -45,14 +45,13 @@ public class Settings extends AppCompatActivity {
 
 
         Switch WhoStart = (Switch) findViewById(R.id.switch2);
-        WhoStart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comment.setText("yes");
-            }
-        });
+        //WhoStart.setOnCheckedChangeListener(this);
 
 
-    }
+
+
+
+}
     public void ClickConfirm() {
         EditText player10 = findViewById(R.id.player1Name);
         EditText player20 = findViewById(R.id.player2Name);
@@ -64,4 +63,12 @@ public class Settings extends AppCompatActivity {
         editor.apply();
         finish();
     }
+    /*@Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (isChecked) {
+            // do something when check is selected
+        } else {
+            //do something when unchecked
+        }
+    }*/
 }

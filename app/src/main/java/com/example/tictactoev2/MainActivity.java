@@ -30,5 +30,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+        Button btnScore = (Button) findViewById(R.id.button2);
+        btnScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(MainActivity.this, ScoreHistory.class);//SecondActivity
+                startActivity(intent3);
+            }
+        });
     }
 }
