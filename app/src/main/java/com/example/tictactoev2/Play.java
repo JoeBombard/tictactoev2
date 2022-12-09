@@ -4,9 +4,12 @@ import static java.lang.Math.floor;
 import static java.lang.Math.sqrt;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +21,7 @@ public class Play extends AppCompatActivity {
     int QuiJou = 1, WaitToCheckWin = 0; // qui joue = 1 ou -1 // garder qui joue a 1
     String[] Names = new String[] {"Player 1", "Player 2"};// changer leurs noms et changer l'ordre dependament de qui commence (j'ai fait une fonction)
     String[] symbole = new String[] {"X", "O"}; // ne pas les changer de place
-    boolean CanPlay = true, LautreJoueurCommence; //  LautreJoueurCommence est true si la switch sans settings est activer (je c pas commen sa changer encore.
+    boolean CanPlay = true, LautreJoueurCommence, draw = false; //  LautreJoueurCommence est true si la switch sans settings est activer (je c pas commen sa changer encore.
     TextView comment, turn;
     ArrayList<Button> btn = new ArrayList<Button>();
     Button continuer;
@@ -28,6 +31,13 @@ public class Play extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this); // copie cette ligne là et ensuite met l'autre ligne en commentaire pour aller retrouver "player1name".
+        if ((sharedPref.getString("player1name", "")) != "" && (sharedPref.getString("player2name", "")) != "")
+        {
+            Names[0] = sharedPref.getString("player1name", "");
+            Names[1] = sharedPref.getString("player2name", "");
+        }
 
         if (LautreJoueurCommence) CangerLordeDesJoueur();
 
@@ -54,13 +64,26 @@ public class Play extends AppCompatActivity {
         for (int i = 0; i < btn.size(); i++)
         {
             Button temp = btn.get(i);
-            temp.setOnClickListener((new View.OnClickListener() {
+            temp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     ClickBtn(temp);
                 }
-            }));
+            });
         }
+        continuer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                if (draw == false) {
+                    if (QuiJou == 1) editor.putInt("player1score", sharedPref.getInt("player1score", 0) + 1);
+                    else editor.putInt("player2score", sharedPref.getInt("player2score", 0) + 1);
+                }
+                else editor.putInt("drawscore", sharedPref.getInt("drawscore", 0) + 1);
+                editor.apply();
+                finish();
+            }
+        });
     }
     public void ClickBtn(Button btn){
         if (CanPlay) {
@@ -78,6 +101,7 @@ public class Play extends AppCompatActivity {
                     }
                 if (WaitToCheckWin == 9){
                     CanPlay = false;
+                    draw = true;
                     comment.setText( "Draw. ");
                     turn.setText( "Draw. ");
                     continuer.setEnabled(true);
