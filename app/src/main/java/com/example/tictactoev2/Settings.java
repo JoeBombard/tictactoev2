@@ -1,11 +1,15 @@
 package com.example.tictactoev2;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,13 +18,28 @@ public class Settings extends AppCompatActivity {
     String player1;
     String player2;
     Button confirmButton;
+    TextView comment;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
         confirmButton = findViewById(R.id.ButComfirmName);
+
+
+        comment = (TextView) findViewById(R.id.textViewWhoStart);
+
+
+        Switch WhoStart = (Switch) findViewById(R.id.switch2);
+        WhoStart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                comment.setText("yes");
+            }
+        });
+
+
     }
     public void ClickConfirm() {
         EditText player10 = findViewById(R.id.player1Name);

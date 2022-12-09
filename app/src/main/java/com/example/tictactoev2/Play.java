@@ -76,6 +76,14 @@ public class Play extends AppCompatActivity {
                         continuer.setEnabled(true);
                         continuer.setVisibility(View.VISIBLE);
                     }
+                if (WaitToCheckWin == 9){
+                    CanPlay = false;
+                    comment.setText( "Draw. ");
+                    turn.setText( "Draw. ");
+                    continuer.setEnabled(true);
+                    continuer.setVisibility(View.VISIBLE);
+
+                }
                 if (CanPlay) {
                     QuiJou *= -1;
                     if (QuiJou == -1) temp = 1;
@@ -89,7 +97,7 @@ public class Play extends AppCompatActivity {
         for (int i = 0; i < 3; i++) if (btn.get(i).getText() ==  btn.get(i+3).getText() && btn.get(i+3).getText() == btn.get(i+6).getText() && btn.get(i).getText() != "") return true;// check all vertical win
         for (int i = 0; i < 9; i += 3) if (btn.get(i).getText() ==  btn.get(i+1).getText() && btn.get(i+1).getText() == btn.get(i+2).getText() && btn.get(i).getText() != "")return true;// check all horisontal win
         if (btn.get(0).getText() ==  btn.get(4).getText() && btn.get(4).getText() == btn.get(8).getText() && btn.get(0).getText() != "") return true;// check diagonale 1 win
-        if (btn.get(2).getText() ==  btn.get(4).getText() && btn.get(4).getText() == btn.get(6).getText() && btn.get(2).getText() != "") return true;// check all diagonale 2 win
+        if (btn.get(2).getText() ==  btn.get(4).getText() && btn.get(4).getText() == btn.get(6).getText() && btn.get(2).getText() != "") return true;// check diagonale 2 win
         return false;
     }
     public void CangerLordeDesJoueur(){
