@@ -37,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -45,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -53,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
@@ -75,6 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -83,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -91,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
@@ -113,6 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -121,6 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -129,6 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#673AB7"
                 android:textSize="90sp"
                 tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
