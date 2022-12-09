@@ -39,8 +39,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:fontFamily="monospace"
+            android:hint="Name"
             android:inputType="textPersonName"
-            android:text="Name"
             android:textColor="#673AB7"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -67,9 +67,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:fontFamily="monospace"
+            android:hint="Name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Name"
             android:textColor="#673AB7" />
 
     </LinearLayout>
