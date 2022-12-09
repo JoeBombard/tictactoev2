@@ -30,13 +30,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-        /*Button btnSetting = (Button) findViewById(R.id.button3);
-        btnSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent2 = new Intent(MainActivity.this, Settings.class);//SecondActivity
-                startActivity(intent2);
-            }
-        });*/
     }
 }
