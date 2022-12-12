@@ -34,17 +34,17 @@ public class Settings extends AppCompatActivity {
                 ClickConfirm();
             }
         });
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        /*SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         if ((sharedPref.getString("player1name", "")) != "" && (sharedPref.getString("player2name", "")) != "")
         {
             name1.setText(sharedPref.getString("player1name", ""));
             name2.setText(sharedPref.getString("player2name", ""));
-        }
+        }*/
 
-        comment = (TextView) findViewById(R.id.textViewWhoStart);
+        //comment = (TextView) findViewById(R.id.textViewWhoStart);
 
 
-        Switch WhoStart = (Switch) findViewById(R.id.switch2);
+        //Switch WhoStart = (Switch) findViewById(R.id.switch2);
         //WhoStart.setOnCheckedChangeListener(this);
 
 

@@ -33,11 +33,11 @@ public class Play extends AppCompatActivity {
         setContentView(R.layout.activity_play);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this); // copie cette ligne là et ensuite met l'autre ligne en commentaire pour aller retrouver "player1name".
-        if ((sharedPref.getString("player1name", "")) != "" && (sharedPref.getString("player2name", "")) != "")
-        {
+        if (sharedPref.getString("player1name", "") != "" )
             Names[0] = sharedPref.getString("player1name", "");
+        if (sharedPref.getString("player2name", "") != "")
             Names[1] = sharedPref.getString("player2name", "");
-        }
+
 
         if (LautreJoueurCommence) CangerLordeDesJoueur();
 

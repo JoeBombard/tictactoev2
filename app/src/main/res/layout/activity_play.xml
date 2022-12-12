@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/PlayerTurn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="104dp"
         android:backgroundTint="#03A9F4"
         android:fontFamily="sans-serif-medium"
         android:text="Player x's truns"
