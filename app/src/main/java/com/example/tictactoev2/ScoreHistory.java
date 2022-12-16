@@ -1,6 +1,8 @@
 package com.example.tictactoev2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -9,6 +11,12 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ScoreHistory extends AppCompatActivity {
 TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
@@ -51,6 +59,27 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
                 finish();
             }
         });
+
+        try {
+            File myObj = new File(getFilesDir().getAbsolutePath() + File.pathSeparator + "score.txt");
+            //File myObj = new File("score.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNext()) {
+                String data = myReader.next();
+                P2W.setText(data);
+            }
+            myReader.close();
+            Toast.makeText(getBaseContext(), "Score saved successfully!", Toast.LENGTH_SHORT).show();
+        } catch (FileNotFoundException e) {
+            Toast.makeText(getBaseContext(), "Score failed to saved", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+
+        ArrayList<Integer> inte = new ArrayList<Integer>();
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));/**/
+        //recyclerView.setAdapter(new CustomAdapter(inte,this));
 
     }
 }

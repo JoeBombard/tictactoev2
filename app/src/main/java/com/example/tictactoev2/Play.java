@@ -11,9 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.jar.Attributes;
 
@@ -75,12 +80,37 @@ public class Play extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPref.edit();
-                if (draw == false) {
-                    if (QuiJou == 1) editor.putInt("player1score", sharedPref.getInt("player1score", 0) + 1);
-                    else editor.putInt("player2score", sharedPref.getInt("player2score", 0) + 1);
+                if (draw == false) QuiJou = 0;
+
+                try {
+
+                    File myObj = new File(getFilesDir().getAbsolutePath() + File.pathSeparator + "score.txt");
+                    FileWriter myWriter = new FileWriter(myObj);
+                    myWriter.write("Files in Java might be tricky, but it is fun enough!");
+                    String name1 = "Player 1", name2 = "Player 2";
+                    myWriter.write("Test    test\n");
+                    if (sharedPref.getString("player1name", "") != "") name1 = (sharedPref.getString("player1name", ""));
+                    myWriter.write(name1);
+                    if (sharedPref.getString("player2name", "") != "") name2 = (sharedPref.getString("player2name", ""));
+                    myWriter.write(name2);
+                    myWriter.write(Integer.toString(QuiJou) + "\n");
+                    /*
+                    FileOutputStream fileout=openFileOutput("Score.txt", MODE_PRIVATE);
+                    OutputStreamWriter outputWriter=new OutputStreamWriter(myObj);
+                    String name1 = "Player 1", name2 = "Player 2";
+                    if (sharedPref.getString("player1name", "") != "") name1 = (sharedPref.getString("player1name", ""));
+                    outputWriter.write(name1);
+                    if (sharedPref.getString("player2name", "") != "") name2 = (sharedPref.getString("player2name", ""));
+                    outputWriter.write(name2);
+                    outputWriter.write(Integer.toString(QuiJou) + "\n");
+                    outputWriter.close();*/
+                    myWriter.close();
+                    //display file saved message
+                    Toast.makeText(getBaseContext(), "Score saved successfully!", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(getBaseContext(), "Score failed to saved", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
                 }
-                else editor.putInt("drawscore", sharedPref.getInt("drawscore", 0) + 1);
-                editor.apply();
                 finish();
             }
         });
