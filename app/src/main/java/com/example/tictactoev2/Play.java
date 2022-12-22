@@ -83,7 +83,6 @@ public class Play extends AppCompatActivity {
                 if (draw == false) QuiJou = 0;
 
                 try {
-
                     File myObj = new File(getFilesDir().getAbsolutePath() + File.pathSeparator + "score.txt");
                     FileWriter myWriter = new FileWriter(myObj);
                     myWriter.write("Files in Java might be tricky, but it is fun enough!");
