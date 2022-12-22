@@ -25,7 +25,7 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_history);
-        P1W = (TextView) findViewById(R.id.player1win);
+        /*P1W = (TextView) findViewById(R.id.player1win);
         P2W = (TextView) findViewById(R.id.player2win);
         P1L = (TextView) findViewById(R.id.player1loss);
         P2L = (TextView) findViewById(R.id.player2loss);
@@ -34,11 +34,11 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
         name1 = (TextView) findViewById(R.id.name1);
         name2 = (TextView) findViewById(R.id.name2);
         P1Score = (TextView) findViewById(R.id.player1score);
-        P2Score = (TextView) findViewById(R.id.player2score);
+        P2Score = (TextView) findViewById(R.id.player2score);*/
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
-        P1W.setText(Integer.toString(sharedPref.getInt("player1score", 0)));
+        /*P1W.setText(Integer.toString(sharedPref.getInt("player1score", 0)));
         P2W.setText(Integer.toString(sharedPref.getInt("player2score", 0)));
         P1L.setText(Integer.toString(sharedPref.getInt("player2score", 0)));
         P2L.setText(Integer.toString(sharedPref.getInt("player1score", 0)));
@@ -50,7 +50,7 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
         else name2.setText("Player 2's score");
         int temp = sharedPref.getInt("player1score", 0) - sharedPref.getInt("player2score", 0);
         P1Score.setText(Integer.toString(temp));
-        P2Score.setText(Integer.toString(temp * -1));
+        P2Score.setText(Integer.toString(temp * -1));*/
 
         Button finish = (Button) findViewById(R.id.terminer);
         finish.setOnClickListener(new View.OnClickListener() {

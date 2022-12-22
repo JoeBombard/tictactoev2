@@ -15,7 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+public class CustomAdapter{}/* extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
     ArrayList<Jour> jour;
 
@@ -63,3 +63,4 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         public void setMessage(int messages) {message = messages;}
     }
 }
+*/
