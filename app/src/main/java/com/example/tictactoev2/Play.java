@@ -84,15 +84,13 @@ public class Play extends AppCompatActivity {
 
                 try {
                     File myObj = new File(getFilesDir().getAbsolutePath() + File.pathSeparator + "score.txt");
+                    myObj.deleteOnExit();
                     FileWriter myWriter = new FileWriter(myObj);
-                    myWriter.write("Files in Java might be tricky, but it is fun enough!");
                     String name1 = "Player 1", name2 = "Player 2";
-                    myWriter.write("Test    test\n");
                     if (sharedPref.getString("player1name", "") != "") name1 = (sharedPref.getString("player1name", ""));
                     if (sharedPref.getString("player2name", "") != "") name2 = (sharedPref.getString("player2name", ""));
-                    myWriter.write(name2);
-                    String winner = name1;
-                    if (QuiJou == 0) winner = name2;
+                    String winner = name2;
+                    if (QuiJou == 0) winner = name1;
                     myWriter.write(name1 + " VS " + name2 + " : " + winner + " wins\n");
                     /*
                     FileOutputStream fileout=openFileOutput("Score.txt", MODE_PRIVATE);

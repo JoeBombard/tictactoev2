@@ -66,8 +66,9 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNext()) {
                 String data = myReader.nextLine();
-                P1W.setText("test");
-                P2W.setText(data);
+                str.add(data);
+                //data = myReader.nextLine();
+                //P1W.setText(data);
             }
             myReader.close();
             Toast.makeText(getBaseContext(), "Score saved successfully!", Toast.LENGTH_SHORT).show();
