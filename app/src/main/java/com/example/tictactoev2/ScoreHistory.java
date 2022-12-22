@@ -63,10 +63,10 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
         str.add("test vs test1, test win");
         try {
             File myObj = new File(getFilesDir().getAbsolutePath() + File.pathSeparator + "score.txt");
-            //File myObj = new File("score.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNext()) {
-                String data = myReader.next();
+                String data = myReader.nextLine();
+                P1W.setText("test");
                 P2W.setText(data);
             }
             myReader.close();

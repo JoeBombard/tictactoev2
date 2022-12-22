@@ -89,10 +89,11 @@ public class Play extends AppCompatActivity {
                     String name1 = "Player 1", name2 = "Player 2";
                     myWriter.write("Test    test\n");
                     if (sharedPref.getString("player1name", "") != "") name1 = (sharedPref.getString("player1name", ""));
-                    myWriter.write(name1);
                     if (sharedPref.getString("player2name", "") != "") name2 = (sharedPref.getString("player2name", ""));
                     myWriter.write(name2);
-                    myWriter.write(Integer.toString(QuiJou) + "\n");
+                    String winner = name1;
+                    if (QuiJou == 0) winner = name2;
+                    myWriter.write(name1 + " VS " + name2 + " : " + winner + " wins\n");
                     /*
                     FileOutputStream fileout=openFileOutput("Score.txt", MODE_PRIVATE);
                     OutputStreamWriter outputWriter=new OutputStreamWriter(myObj);
