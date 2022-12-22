@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(MainActivity.this, ScoreHistory.class);//SecondActivity
+                Intent intent3 = new Intent(MainActivity.this, ScoreHistory.class);//ThirdActivity
                 startActivity(intent3);
             }
         });
