@@ -23,163 +23,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/name1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Player 1's score"
-                android:textColor="#673AB7"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/win1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Win"
-                android:textColor="#673AB7"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/loss1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Loss"
-                android:textColor="#673AB7"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/draw1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Draw"
-                android:textColor="#673AB7"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/player1score"
-                android:layout_width="113dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/player1win"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/player1loss"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/player1draw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/name2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Player 2's score"
-                android:textColor="#673AB7"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/win2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Win"
-                android:textColor="#673AB7"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/loss2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Loss"
-                android:textColor="#673AB7"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/draw2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Draw"
-                android:textColor="#673AB7"
-                android:textSize="16sp" />
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/player2score"
-                android:layout_width="113dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/player2win"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/player2loss"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/player2draw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="16sp" />
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -189,7 +43,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="495dp"
+                android:layout_height="638dp"
                 android:layout_weight="1" />
 
             <Button
