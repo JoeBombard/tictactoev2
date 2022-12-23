@@ -34,41 +34,15 @@ public class Settings extends AppCompatActivity {
                 ClickConfirm();
             }
         });
-        /*SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        if ((sharedPref.getString("player1name", "")) != "" && (sharedPref.getString("player2name", "")) != "")
-        {
-            name1.setText(sharedPref.getString("player1name", ""));
-            name2.setText(sharedPref.getString("player2name", ""));
-        }*/
-
-        //comment = (TextView) findViewById(R.id.textViewWhoStart);
-
-
-        //Switch WhoStart = (Switch) findViewById(R.id.switch2);
-        //WhoStart.setOnCheckedChangeListener(this);
-
-
-
-
-
 }
     public void ClickConfirm() {
         EditText player10 = findViewById(R.id.player1Name);
         EditText player20 = findViewById(R.id.player2Name);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        // sharedPref.getString("player1name", "");
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("player1name", player10.getText().toString());
         editor.putString("player2name", player20.getText().toString());
         editor.apply();
         finish();
     }
-    /*@Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-            // do something when check is selected
-        } else {
-            //do something when unchecked
-        }
-    }*/
 }
