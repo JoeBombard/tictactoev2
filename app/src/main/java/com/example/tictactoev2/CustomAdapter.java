@@ -17,10 +17,10 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
-    ArrayList<Jour> jour;
+    ArrayList<String> str;
 
-    public CustomAdapter(ArrayList<Jour> jours) {
-        jour = jours;
+    public CustomAdapter(ArrayList<String> strs) {
+        str = strs;
     }
 
     @NonNull
@@ -33,33 +33,23 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.setImage(jour.get(position).image);
-        holder.setText(jour.get(position).text);
-        holder.setMessage(jour.get(position).message);
+        holder.setText(str.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return jour.size();
+        return str.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textView;
-        ImageView imageView;
-        int message;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(view -> {
-                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show();
-            });
-            textView = itemView.findViewById(R.id.textView);
-            imageView = itemView.findViewById(R.id.imageView);
+            textView = itemView.findViewById(R.id.textView2);
         }
 
-        public void setText(int message) {textView.setText(message);}
-        public void setImage(int image) {imageView.setImageResource(image);}
-        public void setMessage(int messages) {message = messages;}
+        public void setText(String message) {textView.setText(message);}
     }
 }

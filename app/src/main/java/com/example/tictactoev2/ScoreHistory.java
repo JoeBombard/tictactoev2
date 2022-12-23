@@ -60,13 +60,17 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
             }
         });
         ArrayList<String> str = new ArrayList<String>();
-        str.add("test vs test1, test win");
+        str.add("testtttttttt1");
+        str.add("testtttttttt2");
+        str.add("testtttttttt3");
         try {
             File myObj = new File(getFilesDir().getAbsolutePath() + File.pathSeparator + "score.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNext()) {
                 String data = myReader.nextLine();
                 str.add(data);
+
+                str.add("testtttttttt22222");
                 //data = myReader.nextLine();
                 //P1W.setText(data);
             }
@@ -81,7 +85,7 @@ TextView P1W, P2W, P1draw, P2draw, P1L, P2L, name1, name2, P1Score, P2Score;
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));/**/
-        //recyclerView.setAdapter(new CustomAdapter(str,this));
+        recyclerView.setAdapter(new CustomAdapter(str));
 
     }
 }
