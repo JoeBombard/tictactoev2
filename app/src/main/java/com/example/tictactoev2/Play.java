@@ -15,18 +15,20 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.jar.Attributes;
 
 public class Play extends AppCompatActivity {
-    int QuiJou = 1, WaitToCheckWin = 0; // qui joue = 1 ou -1 // garder qui joue a 1
-    String[] Names = new String[] {"Player 1", "Player 2"};// changer leurs noms et changer l'ordre dependament de qui commence (j'ai fait une fonction)
-    String[] symbole = new String[] {"X", "O"}; // ne pas les changer de place
-    boolean CanPlay = true, LautreJoueurCommence, draw = false; //  LautreJoueurCommence est true si la switch sans settings est activer (je c pas commen sa changer encore.
+    int QuiJou = 1, WaitToCheckWin = 0; // qui joue = 1 ou -1
+    String[] Names = new String[] {"Player 1", "Player 2"};
+    String[] symbole = new String[] {"X", "O"};
+    boolean CanPlay = true, draw = false;
     TextView comment, turn;
     ArrayList<Button> btn = new ArrayList<Button>();
     Button continuer;
@@ -37,14 +39,14 @@ public class Play extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this); // copie cette ligne là et ensuite met l'autre ligne en commentaire pour aller retrouver "player1name".
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         if (sharedPref.getString("player1name", "") != "" )
             Names[0] = sharedPref.getString("player1name", "");
         if (sharedPref.getString("player2name", "") != "")
             Names[1] = sharedPref.getString("player2name", "");
 
 
-        if (LautreJoueurCommence) CangerLordeDesJoueur();
+
 
         comment = (TextView) findViewById(R.id.GameComment);
         turn = (TextView) findViewById(R.id.PlayerTurn);
@@ -80,31 +82,20 @@ public class Play extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPref.edit();
-                if (draw == false) QuiJou = 0;
 
                 try {
                     File myObj = new File(getFilesDir().getAbsolutePath() + File.pathSeparator + "score.txt");
+                    FileWriter myWriter = new FileWriter(myObj, true);
                     myObj.deleteOnExit();
-                    FileWriter myWriter = new FileWriter(myObj);
                     String name1 = "Player 1", name2 = "Player 2";
                     if (sharedPref.getString("player1name", "") != "") name1 = (sharedPref.getString("player1name", ""));
                     if (sharedPref.getString("player2name", "") != "") name2 = (sharedPref.getString("player2name", ""));
-                    String winner = name2;
-                    if (QuiJou == 0) winner = name1;
-                    myWriter.write(name1 + " VS " + name2 + " : " + winner + " wins\n");
-                    /*
-                    FileOutputStream fileout=openFileOutput("Score.txt", MODE_PRIVATE);
-                    OutputStreamWriter outputWriter=new OutputStreamWriter(myObj);
-                    String name1 = "Player 1", name2 = "Player 2";
-                    if (sharedPref.getString("player1name", "") != "") name1 = (sharedPref.getString("player1name", ""));
-                    outputWriter.write(name1);
-                    if (sharedPref.getString("player2name", "") != "") name2 = (sharedPref.getString("player2name", ""));
-                    outputWriter.write(name2);
-                    outputWriter.write(Integer.toString(QuiJou) + "\n");
-                    outputWriter.close();*/
+                    String winner = "Draw\n";
+                    if (QuiJou == 1) winner = name1 + " Wins\n";
+                    else if (QuiJou == -1) winner = name2 + " Wins\n";
+                    myWriter.write(name1 + " VS " + name2 + " : " + winner);
                     myWriter.close();
-                    //display file saved message
-                    Toast.makeText(getBaseContext(), "Score saved successfully!", Toast.LENGTH_SHORT).show();
+
                 } catch (Exception e) {
                     Toast.makeText(getBaseContext(), "Score failed to saved", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
@@ -130,6 +121,7 @@ public class Play extends AppCompatActivity {
                 if (WaitToCheckWin == 9){
                     CanPlay = false;
                     draw = true;
+                    QuiJou = 2;
                     comment.setText( "Draw. ");
                     turn.setText( "Draw. ");
                     continuer.setEnabled(true);
@@ -151,10 +143,5 @@ public class Play extends AppCompatActivity {
         if (btn.get(0).getText() ==  btn.get(4).getText() && btn.get(4).getText() == btn.get(8).getText() && btn.get(0).getText() != "") return true;// check diagonale 1 win
         if (btn.get(2).getText() ==  btn.get(4).getText() && btn.get(4).getText() == btn.get(6).getText() && btn.get(2).getText() != "") return true;// check diagonale 2 win
         return false;
-    }
-    public void CangerLordeDesJoueur(){
-        String temp = Names[0];
-        Names [0] = Names[1];
-        Names[1]=temp;
     }
 }

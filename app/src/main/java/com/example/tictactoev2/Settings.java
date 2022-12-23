@@ -19,7 +19,7 @@ public class Settings extends AppCompatActivity {
     String player1;
     String player2;
     Button confirmButton;
-    TextView comment, name1, name2;
+    TextView name1, name2;
 
     @SuppressLint("MissingInflatedId")
     @Override

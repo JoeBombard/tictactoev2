@@ -74,15 +74,6 @@
 
     </LinearLayout>
 
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:minHeight="48dp"
-        android:text="Choose which player starts"
-        android:textColor="#673AB7" />
-
     <TextView
         android:id="@+id/textViewWhoStart"
         android:layout_width="match_parent"
